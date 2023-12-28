@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { View, Animated, Text, Dimensions, Easing, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Animated, Text, Dimensions,useWindowDimensions, Easing, SafeAreaView, TouchableOpacity } from 'react-native';
 import emdrStyle from './emdrStyle';
 
-var { width } = Dimensions.get('window');
-export default class EMDR extends Component {
+//var { width } = Dimensions.get('window');
 
+const EMDR =()=> {
+    var width= useWindowDimensions().width
     state = {
         xValue: new Animated.Value(0),
         stopAnimation: false
     }
-
+        
     animer = () => {
         Animated.timing(this.state.xValue, {
-            toValue: width - 55,
+            toValue: width - 80,
             duration: 3000,
             easing: Easing.linear,
             // easing: Easing.back(),     
@@ -31,7 +32,7 @@ export default class EMDR extends Component {
                 if (this.state.stopAnimation == false) {
                     this.animer();
                 }
-
+                this.state.stopAnimation = false
             });
         });
     }
@@ -41,7 +42,6 @@ export default class EMDR extends Component {
     }
 
 
-    render() {
         return (
             <SafeAreaView style={emdrStyle.contenaire}>
                 <Animated.View style={[emdrStyle.point, { left: this.state.xValue }]}>
@@ -65,5 +65,5 @@ export default class EMDR extends Component {
             </SafeAreaView>
         );
     }
-}
 
+export default EMDR
