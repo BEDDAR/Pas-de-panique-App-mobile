@@ -14,13 +14,14 @@ const emdrStyle = StyleSheet.create({
         justifyContent: 'space-around',
     },
     bouton: {
-        backgroundColor:"#087919",
+        backgroundColor:"#BC63FF",
         width:150,
         height:60,
         alignItems:'center',
         justifyContent:'center',
         borderRadius:10,
-        marginBottom:20
+        margin:20
+    
     }
 })
 

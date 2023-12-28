@@ -5,11 +5,27 @@ import homeStyle from './homeStyle'
 const Home=({navigation})=>{
     return (
         <View style={homeStyle.menu}>
-            <TouchableOpacity onPress={()=>navigation.navigate('EMDR')}>
+            <TouchableOpacity style={homeStyle.bouton} onPress={()=>navigation.navigate('Conseils')}>
+                <Text style={homeStyle.menuItem}>
+                    Pendant une attaque de panique
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={homeStyle.bouton} onPress={()=>navigation.navigate('EMDR')}>
                 <Text style={homeStyle.menuItem}>
                     Thérapie EMDR
                 </Text>
             </TouchableOpacity>
+            <TouchableOpacity style={homeStyle.bouton} onPress={()=>navigation.navigate('Puzzle')}>
+                <Text style={homeStyle.menuItem}>
+                    Jouer au puzzle
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={homeStyle.bouton} onPress={()=>navigation.navigate('Compter')}>
+                <Text style={homeStyle.menuItem}>
+                    Compter
+                </Text>
+            </TouchableOpacity>
+            
         </View>
     )
 }
