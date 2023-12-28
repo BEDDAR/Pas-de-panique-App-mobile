@@ -14,7 +14,7 @@ const emdrStyle = StyleSheet.create({
         justifyContent: 'space-around',
     },
     bouton: {
-        backgroundColor:"#BC63FF",
+        backgroundColor:"#2FC19F",
         width:150,
         height:60,
         alignItems:'center',

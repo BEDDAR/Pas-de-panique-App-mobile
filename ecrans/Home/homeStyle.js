@@ -4,22 +4,26 @@ const homeStyle = StyleSheet.create({
 
     menu: {
         padding: 15,
-        margin:20,
+        alignItems:'center'
     },
 
     menuItem: {
         fontSize: 20,
-        color:'black'
+        color:'black',
     },
 
     bouton:{
-        width:250,
-        height:50,
+        width:300,
+        height:80,
         borderRadius: 10,
         margin:20, 
         padding:10,       
         backgroundColor: 'white',
-        justifyContent:'center'
+        alignItems:'center',
+        flexDirection:'row',
+        justifyContent:'space-between'
+
+        
     }
 })
 
