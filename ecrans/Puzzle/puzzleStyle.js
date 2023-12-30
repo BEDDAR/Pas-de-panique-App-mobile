@@ -19,7 +19,7 @@ const puzzleStyle = StyleSheet.create({
     },
 
     bouton: {
-        backgroundColor: "#D24BC3",
+        backgroundColor: "#E649AA",
         width: 130,
         height: 60,
         alignItems: 'center',

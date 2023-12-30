@@ -7,8 +7,7 @@ import Conseils from '../Conseils/conseils'
 
 const Puzzle = () => {
 
-    const [positionsPieces, setPositionsPieces] = useState([7, 6, 4, 8, 1, null, 9, 2, 14, 10, 3, 15, 5, 13, 12, 11]);
-    const positionsInitPieces = [7, 6, 4, 8, 1, null, 9, 2, 14, 10, 3, 15, 5, 13, 12, 11];
+    const [positionsPieces, setPositionsPieces] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, null]);
 
     const [ismutted, setIsMutted] = useState(false)
     /* it will be called when queues did update */
@@ -80,7 +79,7 @@ const Puzzle = () => {
                 setPositionsPieces(positionsPieces, temp)
             }
         }
-        vectoire(temp)
+        vectoire(positionsPieces)
         setIsMutted(!ismutted)
 
     }
@@ -94,11 +93,22 @@ const Puzzle = () => {
                 [
                     {
                         text: 'Quiter',
-                        onPress: () => console.log('hi'),
 
                     },
                 ],)
         }
+    }
+
+    const positionAleatoire = () => {
+        const tab = [
+            [7, 6, 4, 8, 1, null, 9, 2, 14, 10, 3, 15, 5, 13, 12, 11],
+            [7, 6, 9, 4, 1, 10, 15, 8, 5, 14, 13, 2, 12, null, 3, 11],
+            [1, 7, 9, 4, 6, 10, 2, 15, 5, null, 8, 11, 12, 14, 3, 13],
+            [null, 7, 9, 4, 1, 6, 2, 15, 5, 10, 8, 3, 12, 14, 13, 11],
+            [1, 7, 6, 9, 15, 10, null, 4, 12, 5, 8, 13, 3, 11, 14, 2]]
+        const Random = Math.floor(Math.random() * 4)
+        setPositionsPieces(tab[Random])
+        setIsMutted(!ismutted)
     }
 
     return (
@@ -107,8 +117,8 @@ const Puzzle = () => {
                 {positionsPieces.map((piece, index) => <PuzzlePiece key={index} name={piece} myFunction={() => mutationPosition(piece, index)} />)}
             </View>
             <View style={puzzleStyle.displayBouton}>
-                <TouchableOpacity style={puzzleStyle.bouton} on onPress={this.remplirTabPuzzle}><Text style={puzzleStyle.textBouton} onPress={() => setPositionsPieces(positionsInitPieces)}>Commencer</Text></TouchableOpacity>
-                <TouchableOpacity style={puzzleStyle.bouton} on onPress={this.remplirTabPuzzle}><Text style={puzzleStyle.textBouton} onPress={() => setPositionsPieces(positionsInitPieces)}>Recommencer</Text></TouchableOpacity>
+                <TouchableOpacity style={puzzleStyle.bouton} on onPress={this.remplirTabPuzzle}><Text style={puzzleStyle.textBouton} onPress={() => positionAleatoire()}>Commencer</Text></TouchableOpacity>
+                <TouchableOpacity style={puzzleStyle.bouton} on onPress={this.remplirTabPuzzle}><Text style={puzzleStyle.textBouton} onPress={() => positionAleatoire()}>Recommencer</Text></TouchableOpacity>
             </View>
         </View>
     )
