@@ -7,6 +7,7 @@ import EMDR from '../ecrans/EMDR/emdr'
 import Conseils from '../ecrans/Conseils/conseils'
 import Puzzle from '../ecrans/Puzzle/puzzle'
 import Compter from '../ecrans/Compter/Compter'
+import EmdrAccueil from '../ecrans/EMDR/emdrAccueil'
 const Stack =createNativeStackNavigator();
 
 const Routes = ()=>{
@@ -14,6 +15,7 @@ const Routes = ()=>{
     <NavigationContainer>
       <Stack.Navigator initialRouteName='topTabNavigator' screenOptions={{headerShown:false}}>
         <Stack.Screen name="topTabNavigator" component={TabNavigator}/>
+        <Stack.Screen name="EmdrAccueil" component={EmdrAccueil}/>
         <Stack.Screen name="EMDR" component={EMDR}/>
         <Stack.Screen name="Conseils" component={Conseils}/>
         <Stack.Screen name="Puzzle" component={Puzzle}/>

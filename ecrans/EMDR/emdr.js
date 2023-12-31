@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Animated, Text, Dimensions,useWindowDimensions, Easing, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Animated, Text, Linking,useWindowDimensions, Easing, SafeAreaView, TouchableOpacity } from 'react-native';
 import emdrStyle from './emdrStyle';
 
-//var { width } = Dimensions.get('window');
 
 const EMDR =()=> {
     var width= useWindowDimensions().width
@@ -44,7 +43,7 @@ const EMDR =()=> {
 
         return (
             <SafeAreaView style={emdrStyle.contenaire}>
-                <Animated.View style={[emdrStyle.point, { left: this.state.xValue }]}>
+                <Animated.View style={[emdrStyle.point, { left: this.state.xValue,marginTop:50 }]}>
                 </Animated.View>
                 <View style={{ alignItems: 'center' }}>
                     <View style={{flexDirection:'row'}}>
@@ -55,12 +54,7 @@ const EMDR =()=> {
                             <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Arrêter</Text>
                         </TouchableOpacity>
                     </View>
-                    <Text style={{ textAlign: 'center', fontSize: 15, fontWeight: 'bold', color: 'black' }}>
-                        Sans bouger votre tête, suivre les mouvement de la boule.{"\n"}
-                        Pensez en même temps à la situation qui génère des émotions douloureuses.{"\n"}
-                        Après cette Séance ces émotions difficiles seront fortement atténuées.{"\n"} {"\n"}
-                        N'hésitez-pas à répéter cet exercice pour conforeter le résultat.
-                    </Text>
+    
                 </View>
             </SafeAreaView>
         );

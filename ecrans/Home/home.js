@@ -18,7 +18,7 @@ const Home = ({ navigation }) => {
                     </Text>
                     <Conseil_SVG width={60} height={60}></Conseil_SVG>
                 </TouchableOpacity>
-                <TouchableOpacity style={homeStyle.bouton} onPress={() => navigation.navigate('EMDR')}>
+                <TouchableOpacity style={homeStyle.bouton} onPress={() => navigation.navigate('EmdrAccueil')}>
                     <Text style={homeStyle.menuItem}>
                         Thérapie EMDR
                     </Text>
