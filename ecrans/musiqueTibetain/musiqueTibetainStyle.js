@@ -9,6 +9,14 @@ const styles = StyleSheet.create({
         margin:10,
         alignItems:'center',
         justifyContent:'center'
+    },
+    card: {
+        backgroundColor:'white',
+        borderRadius:16,
+        borderWidth:2,
+        padding:16 ,
+        margin:15,
+        elevation:5
     }
 })
 

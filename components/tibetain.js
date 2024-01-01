@@ -4,10 +4,10 @@ import Sound from 'react-native-sound'
 import styles from '../ecrans/musiqueTibetain/musiqueTibetainStyle'
 import Slider from '@react-native-community/slider'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import {faPause } from '@fortawesome/free-solid-svg-icons/faPause'
-import {faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
+import { faPause } from '@fortawesome/free-solid-svg-icons/faPause'
+import { faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
 
-const Tibetain = ({ path }) => {
+const Tibetain = ({ path, name }) => {
     const { width } = useWindowDimensions()
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
@@ -50,7 +50,7 @@ const Tibetain = ({ path }) => {
         };
     }, []);
 
-    
+
     const playSound = () => {
         if (sound && isPlaying) {
             sound.play();
@@ -62,7 +62,7 @@ const Tibetain = ({ path }) => {
             sound.play()
         } else if (Play) {
             sound.pause()
-            
+
         }
         setPlay(!Play)
     }
@@ -73,12 +73,19 @@ const Tibetain = ({ path }) => {
             setCurrentTime(value.toFixed(2));
         }
     };
-    
+
+    const getTime = (sec) => {
+        const heures = Math.floor((sec / 360))
+        const minutes = Math.floor(((sec - heures * 360) % 360) / 60)
+        const seconds = Math.floor(sec - minutes * 60)
+        return (heures) + ':' + (minutes) + ':' + (seconds)
+    }
+
     return (
         <View>
 
             <Slider
-                style={{ width: width - 30, height: 40 }}
+                style={{ width: width - 50, height: 40 }}
                 onTouchMove={() => console.log('onTouchMove')}
                 minimumValue={0}
                 maximumValue={duration}
@@ -88,17 +95,22 @@ const Tibetain = ({ path }) => {
                 minimumTrackTintColor="#E649AA"
                 maximumTrackTintColor="#000000" />
 
-            <Text>Total Duration: {duration} seconds</Text>
-            <Text>Current Time: {currentTime} seconds</Text>
-            
-            {Play ? <TouchableOpacity style={styles.bouton} onPress={pauseSound} >
-            <FontAwesomeIcon icon={ faPause } />
-                </TouchableOpacity>:
-                <TouchableOpacity style={styles.bouton} onPress={pauseSound} >
-                    <FontAwesomeIcon icon={ faPlay } />
-                </TouchableOpacity>
-            }
-                 
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text> {getTime(parseFloat(currentTime))}</Text>
+
+                {Play ? <TouchableOpacity style={styles.bouton} onPress={pauseSound} >
+                    <FontAwesomeIcon icon={faPause} />
+                </TouchableOpacity> :
+
+                    <TouchableOpacity style={styles.bouton} onPress={pauseSound} >
+                        <FontAwesomeIcon icon={faPlay} />
+                    </TouchableOpacity>}
+
+                <Text> {getTime(parseFloat(duration))} </Text>
+            </View>
+
+            <Text style={{ color: 'black', alignSelf: 'center' }}>{name}</Text>
+
         </View>
     )
 
