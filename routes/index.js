@@ -6,7 +6,7 @@ import TabNavigator from '../ecrans/TabNavigator/tabNavigator'
 import EMDR from '../ecrans/EMDR/emdr'
 import Conseils from '../ecrans/Conseils/conseils'
 import Puzzle from '../ecrans/Puzzle/puzzle'
-import Compter from '../ecrans/Compter/Compter'
+import MusiqueTibetain from '../ecrans/musiqueTibetain/musiqueTibetain'
 import EmdrAccueil from '../ecrans/EMDR/emdrAccueil'
 const Stack =createNativeStackNavigator();
 
@@ -19,7 +19,7 @@ const Routes = ()=>{
         <Stack.Screen name="EMDR" component={EMDR}/>
         <Stack.Screen name="Conseils" component={Conseils}/>
         <Stack.Screen name="Puzzle" component={Puzzle}/>
-        <Stack.Screen name="Compter" component={Compter}/>
+        <Stack.Screen name="MusiqueTibetain" component={MusiqueTibetain}/>
       </Stack.Navigator>
     </NavigationContainer>
  )

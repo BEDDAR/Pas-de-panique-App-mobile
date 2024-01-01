@@ -1,14 +1,14 @@
 import React from 'react'
-import { Text, TouchableOpacity, ScrollView,View,useWindowDimensions } from 'react-native'
+import { Text, TouchableOpacity, ScrollView, View, useWindowDimensions } from 'react-native'
 import homeStyle from './homeStyle'
 import Conseil_SVG from '../../outils/images/svg/undraw_hey_email_liaa.svg'
 import Eye_Svg from '../../outils/images/svg/undraw_surveillance_re_8tkl.svg'
 import Puzzle_SVG from '../../outils/images/svg/undraw_process_re_gws7.svg'
-import Compter_SVG from '../../outils/images/svg/undraw_calculator_re_alsc.svg'
+import Musique_SVG from '../../outils/images/svg/undraw_meditating_re_aiqa.svg'
 
 
 const Home = ({ navigation }) => {
-    
+
     return (
         <View style={homeStyle.menu}>
             <ScrollView>
@@ -30,11 +30,11 @@ const Home = ({ navigation }) => {
                     </Text>
                     <Puzzle_SVG width={60} height={60}></Puzzle_SVG>
                 </TouchableOpacity>
-                <TouchableOpacity style={homeStyle.bouton} onPress={() => navigation.navigate('Compter')}>
+                <TouchableOpacity style={homeStyle.bouton} onPress={() => navigation.navigate('MusiqueTibetain')}>
                     <Text style={homeStyle.menuItem}>
-                        Compter
+                        Musique tibétain
                     </Text>
-                    <Compter_SVG width={60} height={60}></Compter_SVG>
+                    <Musique_SVG width={60} height={60}></Musique_SVG>
                 </TouchableOpacity>
             </ScrollView>
         </View>
