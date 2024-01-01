@@ -3,6 +3,9 @@ import { View, Text, TouchableOpacity, useWindowDimensions, Alert } from 'react-
 import Sound from 'react-native-sound'
 import styles from '../ecrans/musiqueTibetain/musiqueTibetainStyle'
 import Slider from '@react-native-community/slider'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import {faPause } from '@fortawesome/free-solid-svg-icons/faPause'
+import {faPlay } from '@fortawesome/free-solid-svg-icons/faPlay'
 
 const Tibetain = ({ path }) => {
     const { width } = useWindowDimensions()
@@ -10,6 +13,8 @@ const Tibetain = ({ path }) => {
     const [duration, setDuration] = useState(0);
     const [sound, setSound] = useState(null);
     const [Play, setPlay] = useState(false);
+
+
     useEffect(() => {
         // Initialize the sound
         const mySound = new Sound(path, null, (error) => {
@@ -45,6 +50,7 @@ const Tibetain = ({ path }) => {
         };
     }, []);
 
+    
     const playSound = () => {
         if (sound && isPlaying) {
             sound.play();
@@ -67,6 +73,7 @@ const Tibetain = ({ path }) => {
             setCurrentTime(value.toFixed(2));
         }
     };
+    
     return (
         <View>
 
@@ -85,13 +92,13 @@ const Tibetain = ({ path }) => {
             <Text>Current Time: {currentTime} seconds</Text>
             
             {Play ? <TouchableOpacity style={styles.bouton} onPress={pauseSound} >
-                    <Text>start</Text>
+            <FontAwesomeIcon icon={ faPause } />
                 </TouchableOpacity>:
                 <TouchableOpacity style={styles.bouton} onPress={pauseSound} >
-                    <Text>Pause</Text>
+                    <FontAwesomeIcon icon={ faPlay } />
                 </TouchableOpacity>
             }
-
+                 
         </View>
     )
 

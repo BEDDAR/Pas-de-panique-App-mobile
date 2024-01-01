@@ -6,7 +6,9 @@ const styles = StyleSheet.create({
         width:50,
         height:50,
         borderRadius:50,
-        margin:10
+        margin:10,
+        alignItems:'center',
+        justifyContent:'center'
     }
 })
 
