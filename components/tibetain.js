@@ -86,7 +86,7 @@ const Tibetain = ({ path, name }) => {
 
             <Slider
                 style={{ width: width - 50, height: 40 }}
-                onTouchMove={() => console.log('onTouchMove')}
+                onTouchMove={() => console.log('onTouchMove')} // ne fonctionne pas sans useEffect
                 minimumValue={0}
                 maximumValue={duration}
                 value={parseFloat(currentTime)}

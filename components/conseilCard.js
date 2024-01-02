@@ -7,8 +7,8 @@ const ConseilCard = ({id,text,subText}) => {
     return (
         
         <SafeAreaView style={[styles.card,{width:width-30}]}> 
-           <Text style={{fontWeight:'bold',fontSize:30}}>{text}{'\n'}{'\n'}</Text>
-           <Text style={{fontSize:20}}>{subText}</Text>
+           <Text style={{fontWeight:'bold',fontSize:30,color:'black',}}>{text}{'\n'}{'\n'}</Text>
+           <Text style={{fontSize:20,color:'black',}}>{subText}</Text>
         </SafeAreaView>
     )
 }
