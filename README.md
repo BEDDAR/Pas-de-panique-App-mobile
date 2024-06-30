@@ -1,5 +1,8 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-![image](https://github.com/BEDDAR/Pas-de-panique-App-mobile/assets/128361027/b49831df-0e00-4dc6-835b-a8f749e0ecff)
+![image](https://github.com/BEDDAR/Pas-de-panique-App-mobile/assets/128361027/b49831df-0e00-4dc6-835b-a8f749e0ecff) ![image](https://github.com/BEDDAR/Pas-de-panique-App-mobile/assets/128361027/0e338c68-258c-456b-9a4b-67b300d1fb63) ![image](https://github.com/BEDDAR/Pas-de-panique-App-mobile/assets/128361027/f12dc95c-dfd1-4900-9a3d-5fca7215fdd9)![image](https://github.com/BEDDAR/Pas-de-panique-App-mobile/assets/128361027/b1c8fe47-c161-4c6e-aa0a-748dd8492cba)![image](https://github.com/BEDDAR/Pas-de-panique-App-mobile/assets/128361027/3f93e600-3d4d-42f6-977e-88b3407a643f)
+
+
+
 
 
 # Getting Started
